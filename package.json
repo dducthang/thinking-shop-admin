@@ -1,0 +1,30 @@
+{
+  "name": "thinking-shop-admin",
+  "version": "1.0.0",
+  "description": "small ecommerce shop page for admin ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dthang-one/thinking-shop-admin.git"
+  },
+  "author": "thinking group - intro to SE - HCMUS K19",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dthang-one/thinking-shop-admin/issues"
+  },
+  "homepage": "https://github.com/dthang-one/thinking-shop-admin#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
