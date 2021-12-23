@@ -1,19 +1,15 @@
-exports.getShops = async (req, res, next) =>{
-    res.render('main/shops')
+const ShopService = require('../models/services/shopService');
+
+exports.getShopList = async (req, res, next) =>{
+    const shops = await ShopService.getShops({isLock: false});
+    res.render('main/shops', {shops});
 }
 
 exports.getLockedShops = async (req, res, next) =>{
-    res.render('main/lockedShops')
+    const lockedShops = await ShopService.getShops({isLock: true});
+    res.render('main/lockedShops', {lockedShops});
 }
 
 exports.getShopDetail = async (req, res, next) =>{
-    res.render('main/shopDetail')
-}
-
-exports.getShopProducts = async (req, res, next) =>{
-    res.render('main/products')
-}
-
-exports.getShopProduct = async (req, res, next) =>{
-    res.render('main/productDetail')
+    res.render('main/shopDetail');
 }

@@ -32,8 +32,8 @@
         <div class="pd-20 card-box mb-30">
             <div class="clearfix mb-20">
                 <div class="pull-left">
-                    <h4 class="text-blue h4">Product List</h4>
-                    <p>Table of products available on this shop</p>
+                    <h4 class="text-blue h4">Locked user list</h4>
+                    <p>List of locked user on this system</p>
                 </div>
             </div>
             <div class="table-responsive">
@@ -41,75 +41,34 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone</th>
                             <th scope="col">Actions</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                                <span class="badge badge-success">Unlock</span>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger">Delete</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <span class="badge badge-success">Unlock</span>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger">Delete</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                                <span class="badge badge-success">Unlock</Un pan>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger">Delete</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <span class="badge badge-success">Unlock</span>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger">Delete</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                                <span class="badge badge-success">Unlock</Un pan>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger">Delete</span>
-                            </td>
-                        </tr>
+                        <%for(user of lockedUsers) { %>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><%=user.name %></td>
+                                <td><%=user.address %></td>
+                                <td><%=user.phone %></td>
+                                <td>
+                                    <a href="/shops/shopId">
+                                        <span class="badge badge-primary">Details</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="badge badge-secondary">Block</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-danger">Delete</span>
+                                </td>
+                            </tr>
+                        <%}%>                      
                     </tbody>
                 </table>
             </div>

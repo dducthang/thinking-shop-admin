@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+require('./db/mongoose');
 
 //require('dotenv/config');
 
@@ -33,7 +34,7 @@ app.use('/', homepageRoutes);
 app.use('/shops', shopsRoutes);
 app.use('/auth', authRoutes);
 app.use('/users', usersRoutes);
-app.use('/lockedProducts', productsRoutes);
+app.use('/products', productsRoutes);
 // app.use('/products', productRoutes);
 // app.use('/users', userRoutes);
 // app.use('/auth', authRoutes);

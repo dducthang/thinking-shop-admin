@@ -1,11 +1,15 @@
-exports.getUsers = async (req, res, next) =>{
-    res.render('main/users')
+const UserService = require('../models/services/userServices');
+
+exports.getUserList = async (req, res, next) =>{
+    const users = await UserService.getUser({isLock: false});
+    res.render('main/users', {users});
 }
 
 exports.getLockedUsers = async (req, res, next) =>{
-    res.render('main/lockedUsers')
+    const lockedUsers = await UserService.getUser({isLock: true});
+    res.render('main/lockedUsers', {lockedUsers});
 }
 
-exports.getUser = async (req, res, next) =>{
-    res.render('main/userDetail')
+exports.getUserDetail = async (req, res, next) =>{
+    res.render('main/userDetail');
 }
