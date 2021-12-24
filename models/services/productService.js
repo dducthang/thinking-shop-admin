@@ -8,9 +8,8 @@ exports.getProducts = function getProducts(filters) {
   return Product.find(filters);
 };
 
-exports.getProductById = async function(productId){
-  const product = await Product.findById(productId)
-  return product;
+exports.getProductById = function(productId) {
+  return Product.findById(productId);
 }
 
 exports.getProductByObId = async function(productObId){

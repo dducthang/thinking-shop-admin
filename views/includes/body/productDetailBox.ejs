@@ -21,15 +21,19 @@
         <div class="row clearfix">
             <div class="col-lg-6 col-md-6 col-sm-12 mb-30 offset-lg-3">
                 <div class="card card-box">
-                    <img class="card-img-top" src="/vendors/images/img3.jpg" alt="Card image cap">
+                    <img class="card-img-top" src=<%=product.image %> alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title weight-500">Product name</h5>
+                        <h5 class="card-title weight-500"><%=product.name %></h5>
                         <p class="card-text">Shop description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Detail 1</li>
-                        <li class="list-group-item">Detail 1</li>
-                        <li class="list-group-item">Detail 1</li>
+                    <ul class="list-group list-group-flush">                        
+                        <li class="list-group-item"><%=product.price %></li>
+                        <li class="list-group-item"><%=product.description %></li>
+                        <li class="list-group-item"><%=product.author %></li>
+                        <li class="list-group-item"><%=product.category %></li>
+                        <li class="list-group-item"><%=product.publisher %></li>
+                        <li class="list-group-item"><%=product.publisherDate %></li>
+                        <li class="list-group-item"><%=product.quantity %></li>
                     </ul>
                 </div>
             </div>
