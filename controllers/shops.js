@@ -11,5 +11,6 @@ exports.getLockedShops = async (req, res, next) =>{
 }
 
 exports.getShopDetail = async (req, res, next) =>{
-    res.render('main/shopDetail');
+    const shop = await ShopService.getShop(req.params.shopId);
+    res.render('main/shopDetail', {shop});
 }

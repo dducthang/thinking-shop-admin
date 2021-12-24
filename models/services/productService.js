@@ -3,6 +3,7 @@ const Product = require('../product');
 exports.countProducts = function countProducts(filters) {
   return Product.find(filters).countDocuments();
 };
+
 exports.getProducts = function getProducts(filters) {
   return Product.find(filters);
 };
@@ -32,9 +33,11 @@ exports.getCategoriesQuantity = async function getCategoriesQuantity() {
   }
   return { catsQty, sum };
 };
+
 exports.getAuthors = async function getAuthors() {
   return await Product.distinct('author');
 };
+
 exports.getPublisher= async function getPublisher() {
   return await Product.distinct('publisher');
 };

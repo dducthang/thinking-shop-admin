@@ -50,6 +50,10 @@ const productSchema = new mongoose.Schema({
     ref: "Shop",
     required: true,
   },
+  isLock: {
+    type: Boolean,
+    required: true,
+  },
 });
 
 const Product = mongoose.model("Product", productSchema);

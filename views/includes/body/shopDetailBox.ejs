@@ -23,16 +23,15 @@
                 <div class="card card-box">
                     <img class="card-img-top" src="/vendors/images/img3.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title weight-500">Shop name</h5>
+                        <h5 class="card-title weight-500"><%=shop.name %></h5>
                         <p class="card-text">Shop description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <a href="/shops/shopId/products">Products</a>
                         </li>
-                        <li class="list-group-item">Detail 1</li>
-                        <li class="list-group-item">Detail 1</li>
-                        <li class="list-group-item">Detail 1</li>
+                        <li class="list-group-item"><%=shop.address %></li>
+                        <li class="list-group-item"><%=shop.phone %></li>                        
                     </ul>
                 </div>
             </div>
