@@ -1,9 +1,5 @@
 const Product = require('../product');
 
-exports.countProducts = function countProducts(filters) {
-  return Product.find(filters).countDocuments();
-};
-
 exports.getProducts = function getProducts(filters) {
   return Product.find(filters);
 };
@@ -12,31 +8,10 @@ exports.getProductById = function(productId) {
   return Product.findById(productId);
 }
 
-exports.getProductByObId = async function(productObId){
-  const product = await Product.findOne({_id:productObId});
-  return product;
-}
-
-exports.getCategoriesQuantity = async function getCategoriesQuantity() {
-  let catsQty = [];
-  let cats = [];
-  let sum = 0;
-  cats = await Product.distinct('category');
-  for (c of cats) {
-    const quantity = await Product.count({ category: c });
-    sum += quantity;
-    catsQty.push({
-      name: c,
-      quantity,
-    });
-  }
-  return { catsQty, sum };
+exports.blockShopProducts = function blockShopProducts(shopId){
+  return Product.updateMany({"shopId": shopId}, {"$set":{"isLock": true}});
 };
 
-exports.getAuthors = async function getAuthors() {
-  return await Product.distinct('author');
-};
-
-exports.getPublisher= async function getPublisher() {
-  return await Product.distinct('publisher');
+exports.unblockShopProducts = function unblockShopProducts(shopId){
+  return Product.updateMany({"shopId": shopId}, {"$set":{"isLock": false}});
 };
