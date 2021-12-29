@@ -23,29 +23,16 @@
                 <div class="card card-box">
                     <img class="card-img-top" src="/vendors/images/img3.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title weight-500"><%=user.name %></h5>
+                        <h5 class="card-title weight-500"><%=singleUser.name %></h5>
                         <p class="card-text">Shop description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><%=user.address %></li>
-                        <li class="list-group-item"><%=user.phone %></li>
-                        <li class="list-group-item">
-                            <%if (shop.isLock == true) {%>
-                                <a href="/auth/unblock/shop/<%=shop._id %>">
-                                    <span class="badge badge-success">Unblock</span>
-                                </a>
-                            <%} else {%>
-                                <a href="/auth/block/shop/<%=shop._id %>">
-                                    <span class="badge badge-danger">Block</span>
-                                </a>
-                            <%}%>
-                        </li>
+                        <li class="list-group-item"><%=singleUser.address %></li>
+                        <li class="list-group-item"><%=singleUser.phone %></li>                        
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer-wrap pd-20 mb-20 card-box">
-        DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
-    </div>
+    <%- include('../footer/footer')%>
 </div>

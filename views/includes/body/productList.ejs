@@ -8,21 +8,10 @@
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Basic Tables</li>
+                        <li class="breadcrumb-item" aria-current="page">Product List</li>
+                        <li class="breadcrumb-item active" aria-current="page"><%=shop.name%></li>
                     </ol>
                 </nav>
-            </div>
-            <div class="col-md-6 col-sm-12 text-right">
-                <div class="dropdown">
-                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        January 2018
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Export List</a>
-                        <a class="dropdown-item" href="#">Policies/shops/shopId/products/productId/a>
-                        <a class="dropdown-item" href="#">View Assets</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -49,7 +38,7 @@
                         <td>
                             <h5 class="font-16"><%=product.name %></h5>
                         </td>
-                        <td><%=product.price %></td>
+                        <td>$<%=product.price %></td>
                         <td><%=product.author %></td>
                         <td><%=product.category %></td>
                         <td><%=product.publisher %></td>
@@ -70,8 +59,5 @@
             </tbody>
         </table>
     </div>
-    <div class="footer-wrap pd-20 mb-20 card-box">
-        DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit
-            Hingarajiya</a>
-    </div>
+    <%- include('../footer/footer')%>
 </div>

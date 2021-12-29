@@ -17,7 +17,8 @@
                     <td>
                         <h5 class="font-16"><%=report._id %></h5>
                     </td>
-                    <td><%=report.productId.name %></td>
+                    <td><%=report.shopID.name %></td>
+
                     <td><%=report.userId.name %></td>
                     <td><%=report.body %></td>
                     <td><%=report.postDate.toDateString() %></td>
@@ -27,8 +28,9 @@
                                 <i class="dw dw-more"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                <a class="dropdown-item" href="/products/<%=report.productId._id%>"><i class="dw dw-edit2"></i>View detail</a>
+                                <a class="dropdown-item" href="/products/<%=report.shopID._id%>"><i class="dw dw-edit2"></i>View detail</a>
                                 <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+                                <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Lock</a>
                             </div>
                         </div>
                     </td>

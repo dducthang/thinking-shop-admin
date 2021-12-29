@@ -13,7 +13,7 @@ exports.getProductReportList = async () => {
 
 exports.getShopReportList = async () => {
   const result = await Report.find({reportType:0}).populate({
-    path:"shopId",
+    path:"shopID",
     model:"Shop"
   }).populate({
     path:"userId",

@@ -1,4 +1,7 @@
 exports.getIndex = async (req, res, next) =>{
-    res.render('main/index')
+    const user = req.user;
+    res.render('main/index', {
+        user
+    })
 }
 

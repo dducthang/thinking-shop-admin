@@ -13,12 +13,12 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title">
-                            <h4>Basic Tables</h4>
+                            <h4>Report List</h4>
                         </div>
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item" ><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Basic Tables</li>
+                                <li class="breadcrumb-item active" aria-current="page">Reported List</li>
                             </ol>
                         </nav>
                     </div>
@@ -37,10 +37,10 @@
             </div>
             <%- include('../includes/body/productReportList', {reports: reportedList.products})%>
             <%- include('../includes/body/shopReportList',  {reports: reportedList.shops})%>
-            <div class="footer-wrap pd-20 mb-20 card-box">
-                DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit
-                    Hingarajiya</a>
-            </div>
+    
+            <!-- FOOTER============================= -->
+            <%- include('../includes/body/shopReportList',  {reports: reportedList.shops})%>
+
         </div>
         
     </div>
