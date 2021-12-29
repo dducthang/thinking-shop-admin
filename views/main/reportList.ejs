@@ -1,4 +1,5 @@
 <%- include('../includes/utility/head')%>
+<link rel="stylesheet" href="/css/custome.css"/>
 </head>
 <body class="header-white sidebar-dark">
     <%- include('../includes/header/header')%>
@@ -7,6 +8,41 @@
     <div class="mobile-menu-overlay"></div>
     <!-- Main container -->
     <div class="main-container">
-        <%- include('../includes/body/productReportList')%>
+        <div class="pd-ltr-20 xs-pd-20-10">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>Basic Tables</h4>
+                        </div>
+                        <nav aria-label="breadcrumb" role="navigation">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item" ><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Basic Tables</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                Filter reports
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" style="cursor: pointer;" id="reported-shop-btn">Reported Shops</a>
+                                <a class="dropdown-item" style="cursor: pointer;" id="reported-product-btn">Reported Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('../includes/body/productReportList', {reports: reportedList.products})%>
+            <%- include('../includes/body/shopReportList',  {reports: reportedList.shops})%>
+            <div class="footer-wrap pd-20 mb-20 card-box">
+                DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit
+                    Hingarajiya</a>
+            </div>
+        </div>
+        
     </div>
+    <script src="/ajax/report-ajax.js"></script>
 <%- include('../includes/utility/foot.ejs')%>
