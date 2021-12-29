@@ -31,7 +31,18 @@
                             <a href="/shops/<%=shop._id %>/products">Products</a>
                         </li>
                         <li class="list-group-item"><%=shop.address %></li>
-                        <li class="list-group-item"><%=shop.phone %></li>                        
+                        <li class="list-group-item"><%=shop.phone %></li>
+                        <li class="list-group-item">
+                            <%if (shop.isLock == true) {%>
+                                <a href="/auth/unblock/shop/<%=shop._id %>">
+                                    <span class="badge badge-success">Unblock</span>
+                                </a>
+                            <%} else {%>
+                                <a href="/auth/block/shop/<%=shop._id %>">
+                                    <span class="badge badge-danger">Block</span>
+                                </a>
+                            <%}%>
+                        </li>
                     </ul>
                 </div>
             </div>
