@@ -55,9 +55,9 @@ app.use(passport.session());
 app.use(flash());
 
 //routes
-app.use("/", homepageRoutes);
-app.use("/shops", checkAuthenticated, shopsRoutes);
 app.use("/auth", authRoutes);
+app.use("/", checkAuthenticated, homepageRoutes);
+app.use("/shops", checkAuthenticated, shopsRoutes);
 app.use("/users", checkAuthenticated, usersRoutes);
 app.use("/products", checkAuthenticated, productsRoutes);
 app.use("/reports", reportRoutes);
