@@ -2,11 +2,11 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
+
 const passport = require("passport");
 const session = require("express-session");
 const flash = require("express-flash");
 const MongoDBStore = require("connect-mongodb-session")(session);
-
 require("./db/mongoose");
 
 //require('dotenv/config');
@@ -16,6 +16,8 @@ const authRoutes = require("./routes/auth");
 const shopsRoutes = require("./routes/shops");
 const usersRoutes = require("./routes/users");
 const productsRoutes = require("./routes/products");
+const reportRoutes = require("./routes/report");
+
 // const productRoutes = require('./routes/product');
 // const userRoutes = require('./routes/user');
 // const authRoutes = require('./routes/auth');
@@ -39,6 +41,7 @@ app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan("tiny"));
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -57,6 +60,7 @@ app.use("/shops", checkAuthenticated, shopsRoutes);
 app.use("/auth", authRoutes);
 app.use("/users", checkAuthenticated, usersRoutes);
 app.use("/products", checkAuthenticated, productsRoutes);
+app.use("/reports", reportRoutes);
 // app.use('/products', productRoutes);
 // app.use('/users', userRoutes);
 // app.use('/auth', authRoutes);
