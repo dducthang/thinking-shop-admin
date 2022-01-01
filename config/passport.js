@@ -6,6 +6,7 @@ const adminServices = require("../models/services/adminServices");
 
 function initialize(passport) {
   const authenticateUser = async (email, password, done) => {
+    email = email.toLowerCase();
     const user = await authServices.getUserLean({ email });
     if (!user) {
       return done(null, false, { message: "Account not exists1" });
