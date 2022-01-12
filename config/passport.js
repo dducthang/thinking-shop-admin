@@ -9,15 +9,15 @@ function initialize(passport) {
     email = email.toLowerCase();
     const user = await authServices.getUserLean({ email });
     if (!user) {
-      return done(null, false, { message: "Account not exists1" });
+      return done(null, false, { message: "Account not exists" });
     }
     if (!(user.actor === "admin"))
-      return done(null, false, { message: "Account not exists2" });
+      return done(null, false, { message: "Account not exists" });
     try {
       if (await bcrypt.compare(password, user.password)) {
         const hashPassword = await bcrypt.hash(password, 10);
         done(null, user);
-      } else return done(null, false, { message: "Account not exists3" });
+      } else return done(null, false, { message: "Account not exists" });
     } catch (e) {
       return done(e);
     }
