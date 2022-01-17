@@ -17,6 +17,8 @@ const shopsRoutes = require("./routes/shops");
 const usersRoutes = require("./routes/users");
 const productsRoutes = require("./routes/products");
 const reportRoutes = require("./routes/report");
+const errorRoutes = require('./routes/error');
+
 
 // const productRoutes = require('./routes/product');
 // const userRoutes = require('./routes/user');
@@ -67,6 +69,8 @@ app.use("/reports", reportRoutes);
 // app.use('/orders', orderRoutes);
 // app.use('/api', apiRoutes);
 app.use("/admins", checkAuthenticated, adminRoutes);
+app.use(errorRoutes);
+
 
 //server;
 app.listen(port, () => {

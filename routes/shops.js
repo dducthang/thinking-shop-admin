@@ -6,8 +6,8 @@ const shopController = require('../controllers/shops');
 
 router.get('/', shopController.getShopList);
 router.get('/locked', shopController.getLockedShops);
-router.get('/:shopId', shopController.getShopDetail);
-router.get('/:shopId/products', shopController.getShopProducts);
-router.get('/:shopId/products/:productId', shopController.getShopProductDetail);
+router.get('/:shopId([0-9a-fA-F]{24})', shopController.getShopDetail);
+router.get('/:shopId([0-9a-fA-F]{24})/products', shopController.getShopProducts);
+router.get('/:shopId([0-9a-fA-F]{24})/products/:productId([0-9a-fA-F]{24})', shopController.getShopProductDetail);
 
 module.exports = router;

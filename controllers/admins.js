@@ -4,6 +4,7 @@ exports.getProfile = (req, res, next) => {
   res.render("main/profile", {
     user: req.user,
   });
+  console.log(req.user);
 };
 
 exports.getUpdatePassword = async (req, res, next) => {
